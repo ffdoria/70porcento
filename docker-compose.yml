@@ -3,7 +3,7 @@ version: '3'
 services:
 
   web:
-    build: .
+    image: mgtsuzuki/railsmeca
     ports:
       - "3000:3000"
       - "4000:4000"
@@ -16,7 +16,7 @@ services:
       - WEBPACKER_DEV_SERVER_HOST=wekpack_dev_server
 
   webpack_dev_server:
-    build: .
+    image: mgtsuzuki/railsmeca
     command: ./bin/webpack-dev-server
     ports:
       - "3035:3035"
