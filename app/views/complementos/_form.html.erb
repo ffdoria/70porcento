@@ -21,9 +21,18 @@
   <%= form.text_field :codigo %>
 </div>
 
-<div class="field">
-  <%= form.label :pais %>
-  <%= form.text_field :pais %>
+<% paises = { 'Brasil'    => 'Brasil'    ,
+                'Argentina' => 'Argentina' ,
+                'Uruguai'   => 'Uruguai'   } %>
+
+<div class="custom-control custom-radio">
+  <legend>Pais</legend>
+  <% list = paises.sort 
+        list.each do |x| %>
+  <%= form.radio_button :pais, x[1] %>
+  <label for="<%= ("complement_pais_" + x[1].downcase) %>">
+    <%= x[0] %></label><br>
+  <% end %>
 </div>
 
 <div class="field">
