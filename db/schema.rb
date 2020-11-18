@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_155256) do
+ActiveRecord::Schema.define(version: 2020_11_18_165149) do
+
+  create_table "complementos", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "apelido"
+    t.string "codigo"
+    t.string "pais"
+    t.text "description"
+    t.boolean "can_send_email"
+    t.integer "ano_graduacao"
+    t.float "temperatura_corpo"
+    t.decimal "preco"
+    t.date "aniversario"
+    t.time "horario_favorito"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_complementos_on_user_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,4 +47,5 @@ ActiveRecord::Schema.define(version: 2020_11_18_155256) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "complementos", "users"
 end
