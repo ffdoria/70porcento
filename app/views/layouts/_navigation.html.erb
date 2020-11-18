@@ -4,6 +4,7 @@
     Logado como: <%= current_user.email %> |
     <% if current_user.role == "admin" %>
     Mensagem aos administradores. |
+    <%= link_to "Busca Usuários", users_index_path, data: { turbolinks: false } %> |
     <% elsif current_user.role == "professor" %>
     Mensagem aos professores. |
     <% else %>
