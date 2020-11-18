@@ -18,6 +18,7 @@ class App extends React.Component {
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
     this.onMoreClick = this.onMoreClick.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   fetchData(page = 0) {
@@ -40,8 +41,31 @@ class App extends React.Component {
       .catch((error) => error);
   }
 
+  handleScroll() {
+    const scrollTop =
+      (document.documentElement && document.documentElement.scrollTop) ||
+      document.body.scrollTop;
+    const scrollHeight =
+      (document.documentElement && document.documentElement.scrollHeight) ||
+      document.body.scrollHeight;
+    if (scrollTop + window.innerHeight + 50 >= scrollHeight) {
+      this.setState({ isLoading: true });
+    }
+  }
+
   componentDidMount() {
     this.fetchData();
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.isLoading && prevState.isLoading !== this.state.isLoading) {
+      this.fetchData(this.state.page + 1);
+    }
   }
 
   onSearchChange(event) {
