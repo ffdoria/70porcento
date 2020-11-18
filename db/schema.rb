@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_144712) do
+ActiveRecord::Schema.define(version: 2020_11_18_155256) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 2020_11_18_144712) do
     t.string "role", default: "aluno"
     t.string "first_name", null: false
     t.string "last_name", null: false
+    t.index "lower(email)", name: "index_users_on_lower_email"
+    t.index "lower(first_name)", name: "index_users_on_lower_first_name"
+    t.index "lower(last_name)", name: "index_users_on_lower_last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
