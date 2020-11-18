@@ -25,11 +25,7 @@
                 'Argentina' => 'Argentina' ,
                 'Uruguai'   => 'Uruguai'   } %>
 
-<div class="field">
-  <%= form.label :pais %><br>
-  <% list = paises.sort %>
-  <%= form.select :pais, list %>
-</div>
+<%= buttons(:complemento, :pais, paises) %>
 
 <div class="field">
   <%= form.label :description %>
