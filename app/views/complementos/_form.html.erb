@@ -23,9 +23,10 @@
 
 <% paises = { 'Brasil'    => 'Brasil'    ,
                 'Argentina' => 'Argentina' ,
-                'Uruguai'   => 'Uruguai'   } %>
+                'Uruguai'   => 'Uruguai'   ,
+                'Bolivia'   => 'Bolivia'   } %>
 
-<%= buttons(:complemento, :pais, paises) %>
+<%= button_select(:complemento, :pais, paises) %>
 
 <div class="field">
   <%= form.label :description %>
