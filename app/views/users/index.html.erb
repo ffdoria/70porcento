@@ -19,6 +19,10 @@
     <header>
         <h1>Results</h1>
     </header>
+    <% if @users.present? %>
+    <%= render partial: "pager",
+               locals: { keywords: @keywords, page: @page } %>
+    <% end %>
     <ol class="list-group">
         <% @users.each do |user| %>
         <li class="list-group-item d-flex justify-content-between">
