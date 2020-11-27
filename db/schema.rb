@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_235822) do
+ActiveRecord::Schema.define(version: 2020_11_27_182338) do
+
+  create_table "grades", force: :cascade do |t|
+    t.string "nome"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_grades_on_user_id"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "nome"
+    t.string "codigo"
+    t.string "creditos"
+    t.float "presenca"
+    t.string "dia_semana"
+    t.datetime "horario"
+    t.integer "grade_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["grade_id"], name: "index_subjects_on_grade_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +45,6 @@ ActiveRecord::Schema.define(version: 2020_11_21_235822) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "grades", "users"
+  add_foreign_key "subjects", "grades"
 end

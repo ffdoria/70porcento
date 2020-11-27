@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @subject.nome %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @subject.codigo %>
+</p>
+
+<p>
+  <strong>Creditos:</strong>
+  <%= @subject.creditos %>
+</p>
+
+
+<p>
+  <strong>Presenca:</strong>
+  <%= @subject.presenca %>
+</p>
+
+<p>
+  <strong>Dia semana:</strong>
+  <%= @subject.dia_semana %>
+</p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @subject.horario %>
+</p>
+
+
+<%= link_to 'Edit', edit_grade_subject_path(@grade,@subject) %> |
+<%= link_to 'Back', grade_subjects_path(@grade) %>

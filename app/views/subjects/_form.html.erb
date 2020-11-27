@@ -1,0 +1,51 @@
+<%= form_with(model: [@grade,@subject], local: true) do |form| %>
+  <% if @subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+
+      <ul>
+        <% @subject.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :creditos %>
+    <%= form.text_field :creditos %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :presenca %>
+    <%= form.text_field :presenca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_semana %>
+    <%= form.text_field :dia_semana %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :horario %>
+    <%= form.date_select :horario %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+

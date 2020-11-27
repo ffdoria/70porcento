@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Grades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Suas Grades:</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grades.each do |grade| %>
+      <tr>
+        <td><%= grade.nome %></td>
+        <td><%= link_to "Subjects", grade_subjects_path(grade) %> 
+        <td><%= link_to 'Edit', edit_user_grade_path(@user,grade) %></td>
+        <td><%= link_to 'Destroy', user_grade_path(@user,grade), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'New Grade', new_user_grade_path(@user) %>
