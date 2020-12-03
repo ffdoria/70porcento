@@ -25,6 +25,8 @@
         <td><%= subject.presenca %></td>
         <td><%= subject.dia_semana %></td>
         <td><%= subject.horario %></td>
+        <td><%= link_to "Aulas", subject_aulas_path(subject) %> </td>
+        <td><%= link_to "Atividades", subject_atividades_path(subject) %> </td>
         <td><%= link_to 'Show', grade_subject_path(@grade,subject) %></td>
         <td><%= link_to 'Edit', edit_grade_subject_path(@grade,subject) %></td>
         <td><%= link_to 'Destroy', grade_subject_path(@grade,subject), method: :delete, data: { confirm: 'Are you sure?' } %></td>

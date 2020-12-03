@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Compareceu:</strong>
+  <%= @presenca.compareceu %>
+</p>
+
+<p>
+  <strong>Aula:</strong>
+  <%= @presenca.aula_id %>
+</p>
+
+<%= link_to 'Edit', edit_presenca_path(@presenca) %> |
+<%= link_to 'Back', presencas_path %>

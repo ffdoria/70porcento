@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data aul:</strong>
+  <%= @aula.data_aul %>
+</p>
+
+<p>
+  <strong>Horario aul:</strong>
+  <%= @aula.horario_aul %>
+</p>
+
+
+<%= link_to 'Edit', edit_subject_aula_path(@subject,@aula) %> |
+<%= link_to 'Back', subject_aulas_path(@subject) %>

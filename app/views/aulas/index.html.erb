@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aulas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data aul</th>
+      <th>Horario aul</th>
+      <th>Subject</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aulas.each do |aula| %>
+      <tr>
+        <td><%= aula.data_aul %></td>
+        <td><%= aula.horario_aul %></td>
+        <td><%= aula.subject_id %></td>
+        <td><%= link_to 'Show', subject_aula_path(@subject,aula)%></td>
+        <td><%= link_to 'Edit', edit_subject_aula_path(@subject,aula) %></td>
+        <td><%= link_to 'Destroy', subject_aula_path(@subject,aula), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aula', new_subject_aula_path(@subject) %>
+<%= link_to 'Back', grade_subjects_path(@subject)  %>
