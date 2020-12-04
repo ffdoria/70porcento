@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Atividades</h1>
-
+<% if !@subject.atividades.empty? %>
 <table>
   <thead>
     <tr>
@@ -29,7 +29,9 @@
     <% end %>
   </tbody>
 </table>
-
+<% else %>
+<p>Você não possui atividades criadas!</p>
+<% end %>
 <br>
 
 <%= link_to 'New Atividade', new_subject_atividade_path(@subject) %>

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Grades</h1>
-
+<% if !@user.grades.empty? %>
 <table>
   <thead>
     <tr>
@@ -21,7 +21,11 @@
     <% end %>
   </tbody>
 </table>
-
+<% else %>
+<p>Você não possui grades criadas!</p>
+<% end %>
+<br>
+<br>
 
 <br>
 

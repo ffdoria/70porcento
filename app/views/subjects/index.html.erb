@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Subjects</h1>
-
+<% if !@grade.subjects.empty? %>
 <table>
   <thead>
     <tr>
@@ -34,7 +34,9 @@
     <% end %>
   </tbody>
 </table>
-
+<% else %>
+<p>Você não possui materias criadas!</p>
+<% end %>
 <br>
 
 <%= link_to 'New Subject', new_grade_subject_path(@grade) %> |

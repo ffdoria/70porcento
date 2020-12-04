@@ -21,6 +21,11 @@
     <%= form.time_select :horario_aul %>
   </div>
 
+  <div class="field">
+    <%= form.label :compareceu %>
+    <%= form.select :compareceu, Aula.compareceus.keys, prompt: 'Escolha' %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

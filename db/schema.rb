@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_234752) do
+ActiveRecord::Schema.define(version: 2020_12_03_205859) do
 
   create_table "atividades", force: :cascade do |t|
     t.date "data_at"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2020_12_02_234752) do
     t.integer "subject_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "presenca"
+    t.string "compareceu"
     t.index ["subject_id"], name: "index_aulas_on_subject_id"
   end
 
