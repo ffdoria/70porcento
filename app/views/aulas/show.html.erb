@@ -2,12 +2,12 @@
 
 <p>
   <strong>Data:</strong>
-  <%= @aula.data_aul %>
+  <%= @aula.data_aul.strftime("%m/%d/%Y") %>
 </p>
 
 <p>
   <strong>Horario:</strong>
-  <%= @aula.horario_aul %>
+  <%= @aula.horario_aul.strftime("%I:%M") %>
 </p>
 <p>
   <strong>Compareceu? </strong>

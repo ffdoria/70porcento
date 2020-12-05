@@ -73,6 +73,6 @@ class AulasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def aula_params
-      params.require(:aula).permit(:data_aul, :horario_aul)
+      params.require(:aula).permit(:data_aul, :horario_aul, :compareceu)
     end
 end

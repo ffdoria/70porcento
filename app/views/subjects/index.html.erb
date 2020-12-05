@@ -11,7 +11,6 @@
       <th>Presenca</th>
       <th>Dia semana</th>
       <th>Horario</th>
-      <th>Grade</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +21,9 @@
         <td><%= subject.nome %></td>
         <td><%= subject.codigo %></td>
         <td><%= subject.creditos %></td>
-        <td><%= subject.presenca %></td>
+        <td><%= calc_presenca(subject) %></td>
         <td><%= subject.dia_semana %></td>
-        <td><%= subject.horario %></td>
+        <td><%= subject.horario.strftime("%m/%d/%Y") %></td>
         <td><%= link_to "Aulas", subject_aulas_path(subject) %> </td>
         <td><%= link_to "Atividades", subject_atividades_path(subject) %> </td>
         <td><%= link_to 'Show', grade_subject_path(@grade,subject) %></td>
