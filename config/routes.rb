@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'rails/generate'
+  get 'rails/controller'
+  get 'calendario' => 'calendario#calendario'
+
   devise_for :users
   resources :users do
     resources :grades

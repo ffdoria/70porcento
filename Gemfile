@@ -29,6 +29,8 @@ gem 'redis', '~> 4.0'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
+gem 'simple_calendar', '~> 2.4', '>= 2.4.1'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
