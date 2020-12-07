@@ -4,8 +4,8 @@ class CreateAulas < ActiveRecord::Migration[6.0]
       t.date :data_aul
       t.time :horario_aul
       t.belongs_to :subject, null: false, foreign_key: true
-      t.string :compareceu
       t.timestamps
+      t.string :compareceu
     end
   end
 end
