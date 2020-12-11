@@ -1,0 +1,68 @@
+<%= form_with(model: [@grade,@subject], local: true) do |form| %>
+  <% if @subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+
+      <ul>
+        <% @subject.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :creditos %>
+    <%= form.text_field :creditos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_semana1 %>
+    <%= form.select :dia_semana1, Subject.dia_semanas.keys, prompt: 'Escolha' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horario1 %>
+    <%= form.time_select :horario1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_semana2 %>
+    <%= form.select :dia_semana2, Subject.dia_semanas.keys, prompt: 'Escolha' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horario2 %>
+    <%= form.time_select :horario2 %>
+  </div>
+  <div class="field">
+    <%= form.label :dia_semana3 %>
+    <%= form.select :dia_semana3, Subject.dia_semanas.keys, prompt: 'Escolha' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horario3 %>
+    <%= form.time_select :horario3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quinzenal %>
+    <%= form.select :quinzenal, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+

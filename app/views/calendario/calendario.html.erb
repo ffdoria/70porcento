@@ -1,0 +1,10 @@
+<%= month_calendar do |date| %>
+  <%= date.strftime("%m/%d/%Y") %>
+  <br>
+  <% atvs= Atv_calend(current_user, date) %>
+  <% atvs.each do |x| %>
+      <%= x %> 
+    <br>
+  <% end %>
+
+<% end %>
