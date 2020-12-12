@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :compareceu %>
-    <%= form.select :compareceu, Aula.compareceus.keys, prompt: 'Escolha' %>
+    <%= form.select :compareceu, Aula.compareceus.keys, prompt: 'Escolha',  :selected => "Ainda não teve" %>
   </div>
 
   <div class="actions">

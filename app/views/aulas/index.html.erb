@@ -15,7 +15,7 @@
   <tbody>
     <% @aulas.each do |aula| %>
       <tr>
-        <td><%= aula.data_aul.strftime("%m/%d/%Y") %></td>
+        <td><%= aula.data_aul.strftime("%d/%m/%Y") %></td>
         <td><%= aula.horario_aul.strftime("%I:%M") %></td>
         <td><%= aula.compareceu %></td>
         <td><%= link_to 'Show', subject_aula_path(@subject,aula)%></td>
@@ -30,6 +30,7 @@
 <% end %>
 <br>
 <br>
+
 
 <%= link_to 'New Aula', new_subject_aula_path(@subject) %>
 <%= link_to 'Back', grade_subjects_path(@subject)  %>

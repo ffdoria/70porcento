@@ -22,15 +22,15 @@
 </p>
 
 <p>
-  <strong>Dia semana:</strong>
-  <%= @subject.dia_semana %>
+  <strong>Dia semanas:</strong>
+  <%= func_dias_semanas(@subject) %>
 </p>
 
 <p>
-  <strong>Horario:</strong>
-  <%= @subject.horario %>
+  <strong>Quinzenal? :</strong>
+  <%= @subject.quinzenal %>
 </p>
 
-
+<%= gerar_aulas(@grade,@subject) %>
 <%= link_to 'Edit', edit_grade_subject_path(@grade,@subject) %> |
 <%= link_to 'Back', grade_subjects_path(@grade) %>

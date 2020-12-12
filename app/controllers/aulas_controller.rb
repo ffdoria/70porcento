@@ -75,4 +75,6 @@ class AulasController < ApplicationController
     def aula_params
       params.require(:aula).permit(:data_aul, :horario_aul, :compareceu)
     end
+
+  
 end

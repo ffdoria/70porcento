@@ -16,6 +16,17 @@
     <%= form.text_field :nome %>
   </div>
 
+  <div class="field">
+    <%= form.label :comeco %>
+    <%= form.date_select :comeco %>
+  </div>
+
+  <div class="field">
+    <%= form.label :final_semestre %>
+    <%= form.date_select :final_semestre %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

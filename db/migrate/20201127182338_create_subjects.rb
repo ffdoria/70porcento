@@ -5,8 +5,8 @@ class CreateSubjects < ActiveRecord::Migration[6.0]
       t.string :codigo
       t.string :creditos
       t.float :presenca
-      t.string :dia_semana
-      t.datetime :horario
+      t.string :dia_semana1
+      t.time :horario1
       t.belongs_to :grade, null: false, foreign_key: true
 
       t.timestamps

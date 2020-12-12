@@ -27,17 +27,40 @@
   </div>
 
   <div class="field">
-    <%= form.label :dia_semana %>
-    <%= form.text_field :dia_semana %>
+    <%= form.label :dia_semana1 %>
+    <%= form.select :dia_semana1, Subject.dia_semanas.keys, prompt: 'Escolha' %>
   </div>
-
 
   <div class="field">
-    <%= form.label :horario %>
-    <%= form.date_select :horario %>
+    <%= form.label :horario1 %>
+    <%= form.time_select :horario1 %>
   </div>
 
+  <div class="field">
+    <%= form.label :dia_semana2 %>
+    <%= form.select :dia_semana2, Subject.dia_semanas.keys, prompt: 'Escolha' %>
+  </div>
 
+  <div class="field">
+    <%= form.label :horario2 %>
+    <%= form.time_select :horario2 %>
+  </div>
+  <div class="field">
+    <%= form.label :dia_semana3 %>
+    <%= form.select :dia_semana3, Subject.dia_semanas.keys, prompt: 'Escolha' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horario3 %>
+    <%= form.time_select :horario3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quinzenal %>
+    <%= form.select :quinzenal, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" %>
+  </div>
+  
+  
   <div class="actions">
     <%= form.submit %>
   </div>
