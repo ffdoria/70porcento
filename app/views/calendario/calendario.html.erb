@@ -1,10 +1,15 @@
-<%= month_calendar do |date| %>
-  <%= date.strftime("%m/%d/%Y") %>
-  <br>
-  <% atvs= Atv_calend(current_user, date) %>
-  <% atvs.each do |x| %>
-      <%= x %> 
-    <br>
-  <% end %>
+<head>
+  <link rel="stylesheet" href="app\assets\stylesheets\calendario.scss">
+</head>
 
-<% end %>
+<body>
+  <div class="border border-secondary rounded">
+    <%= month_calendar do |date| %>
+        <%= date.strftime("%d") %>
+        <br>
+        <% atvs= Atv_calend(current_user, date) %>
+        <% atvs.each do |x| %>
+            <%= x %> 
+          <br>
+        <% end %>
+    <% end %>
