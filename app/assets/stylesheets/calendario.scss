@@ -1,3 +1,35 @@
 // Place all the styles related to the calendario controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.simple-calendar {
+    font-family: cursive;
+    .day {  background-color: violet;
+            border-radius: 5px;
+
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: whitesmoke;
+            margin: 10px;}
+  
+    .today { color: black;}
+    .past { background-color: blueviolet;}
+  
+    .prev-month {color: gray;}
+    .next-month {color: gray}
+  
+    .has-events {background-color: blueviolet ;}
+  }
+
+  div.listaAula{
+            padding: 10px;
+            margin: 10px;
+
+  }
+
+  div.aulaLista{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  div.subjectPresenca{
+            padding: 10px;
+            margin: 10px;
+  }

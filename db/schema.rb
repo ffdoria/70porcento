@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2020_12_12_180203) do
     t.date "final_semestre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "comeco_semestre"
     t.index ["user_id"], name: "index_grades_on_user_id"
   end
 

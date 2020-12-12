@@ -164,4 +164,45 @@ module HomeHelper
         end
         return d1 + a1 + d2 + a2 + d3
     end
+    def Atv_calend(user, date)
+        atv=[]
+        user.grades.each do |x|
+            x.subjects.each do |y|
+                y.atividades.each do |z|
+                    if z.data_at == date
+                       atv.push(z.tipo)
+                    end
+                end
+            end
+        end  
+        return atv
+    end
+
+    def aulasDevendo(user)
+        require "date"
+        hj = Date.today
+        aulas=[]
+        user.grades.each do |x|
+            come=x.comeco
+            x.subjects.each do |y|
+                y.aulas.each do |z|
+                    hj.downto(come) { |dia| puts dia }
+                        if z.compareceu == 'Ainda não teve'
+                            aulas.push(x.nome + "--" + y.nome + ", Aula: "+ z.data_aul.strftime("%d/%m"))
+                        end
+                end
+            end
+        end
+        return aulas  
+    end
+
+    def pegarSubjects(user)
+        subj=[]
+        user.grades.each do |x|
+            x.subjects.each do |y|
+                subj.push(y.nome+"--"+calc_presenca(y).to_s)
+            end
+        end
+        return subj
+    end
 end

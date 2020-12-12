@@ -1,4 +1,35 @@
-<%= month_calendar(attribute: :starts_at) do |date| %>
-  <%= date %>
-<% end %>
-<p> Oi </p>
+<head>
+  <link rel="stylesheet" href="app\assets\stylesheets\calendario.scss">
+</head>
+
+<body>
+  <div class="subjectPresenca">
+  <ul class="list-group">
+    <% subj=pegarSubjects(current_user) %>
+    <% subj.each do |x| %>
+        <li class="list-group-item itemLista"><%= x %></li> 
+    <% end %>
+</ul>
+  </div>
+  <div class="border border-secondary rounded container">
+    <%= month_calendar do |date| %>
+        <%= date.day %>
+        <br>
+        <% atvs= Atv_calend(current_user, date) %>
+        <% atvs.each do |x| %>
+            <%= x %> 
+          <br>
+        <% end %>
+    <% end %>
+  </div>
+  
+  <div class="container listaAula">
+    <ul class="list-group">
+      <% aulas_array=aulasDevendo(current_user) %>
+      <% aulas_array.each do |x| %>
+          <li class="list-group-item itemLista"><%= x %></li> 
+      <% end %>
+    </ul>
+  </div>
+</body>
+
