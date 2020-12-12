@@ -1,36 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @subject.nome %>
-</p>
-
-<p>
-  <strong>Codigo:</strong>
-  <%= @subject.codigo %>
-</p>
-
-<p>
-  <strong>Creditos:</strong>
-  <%= @subject.creditos %>
-</p>
-
-
-<p>
-   <strong>Presenca:</strong>
-   <%= calc_presenca(@subject) %>
-</p>
-
-<p>
-  <strong>Dia semanas:</strong>
-  <%= func_dias_semanas(@subject) %>
-</p>
-
-<p>
-  <strong>Quinzenal? :</strong>
-  <%= @subject.quinzenal %>
-</p>
-
 <%= gerar_aulas(@grade,@subject) %>
-<%= link_to 'Edit', edit_grade_subject_path(@grade,@subject) %> |
+<div> 
+ "Preenchido com sucesso"
+</div>
 <%= link_to 'Back', grade_subjects_path(@grade) %>

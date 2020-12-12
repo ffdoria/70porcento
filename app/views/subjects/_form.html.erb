@@ -35,6 +35,10 @@
     <%= form.label :horario1 %>
     <%= form.time_select :horario1 %>
   </div>
+  <div class="field">
+    <%= form.label :quinzenal %>
+    <%= form.select :quinzenal, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" %>
+  </div>
 
   <div class="field">
     <%= form.label :dia_semana2 %>
@@ -46,6 +50,10 @@
     <%= form.time_select :horario2 %>
   </div>
   <div class="field">
+    <%= form.label :quinzenal2 %>
+    <%= form.select :quinzenal2, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" %>
+  </div>
+  <div class="field">
     <%= form.label :dia_semana3 %>
     <%= form.select :dia_semana3, Subject.dia_semanas.keys, prompt: 'Escolha' %>
   </div>
@@ -55,9 +63,11 @@
     <%= form.time_select :horario3 %>
   </div>
 
+  
+  
   <div class="field">
-    <%= form.label :quinzenal %>
-    <%= form.select :quinzenal, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" %>
+    <%= form.label :quinzenal3 %>
+    <%= form.select :quinzenal3, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" %>
   </div>
   
   

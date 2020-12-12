@@ -73,6 +73,6 @@ class SubjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subject_params
-      params.require(:subject).permit(:nome, :codigo, :creditos, :presenca, :dia_semana1, :horario1, :dia_semana2,:horario2,:dia_semana3, :horario3, :quinzenal)
+      params.require(:subject).permit(:nome, :codigo, :creditos, :presenca, :dia_semana1, :horario1, :dia_semana2,:horario2,:dia_semana3, :horario3, :quinzenal,:quinzenal2,:quinzenal3 )
     end
 end

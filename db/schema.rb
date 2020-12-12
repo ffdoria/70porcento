@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_155131) do
+ActiveRecord::Schema.define(version: 2020_12_12_180203) do
 
   create_table "atividades", force: :cascade do |t|
     t.date "data_at"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2020_12_12_155131) do
     t.string "dia_semana3"
     t.time "horario3"
     t.string "quinzenal"
+    t.string "quinzenal2"
+    t.string "quinzenal3"
     t.index ["grade_id"], name: "index_subjects_on_grade_id"
   end
 

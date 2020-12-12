@@ -10,7 +10,6 @@
       <th>Creditos</th>
       <th>Presenca</th>
       <th>Dia semanas</th>
-      <th>Quinzenal?</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,10 +22,9 @@
         <td><%= subject.creditos %></td>
         <td><%= calc_presenca(subject) %></td>
         <td><%= func_dias_semanas(subject) %> </td>
-        <td><%= subject.quinzenal %></td>
         <td><%= link_to "Aulas", subject_aulas_path(subject) %> </td>
         <td><%= link_to "Atividades", subject_atividades_path(subject) %> </td>
-        <td><%= link_to 'Show', grade_subject_path(@grade,subject) %></td>
+        <td><%= link_to 'Preenchimento automatico das aulas', grade_subject_path(@grade,subject) %></td>
         <td><%= link_to 'Edit', edit_grade_subject_path(@grade,subject) %></td>
         <td><%= link_to 'Destroy', grade_subject_path(@grade,subject), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

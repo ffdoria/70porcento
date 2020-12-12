@@ -47,7 +47,7 @@ module HomeHelper
                 return com + (7 +d-dia)
             end
         else
-            return ''
+            return nil
         end
     end
     def sequencia (d1,d2,d3,h1,h2,h3,dc1,dc2,dc3)
@@ -88,24 +88,66 @@ module HomeHelper
         d1 = dia_da_semana(subject.dia_semana1)
         d2 = dia_da_semana(subject.dia_semana2)
         d3 = dia_da_semana(subject.dia_semana3)
-        dia_comeca = dia_certo(com,dia,d1)
+        dia_comeca1 = dia_certo(com,dia,d1)
         dia_comeca2 = dia_certo(com,dia,d2)
         dia_comeca3 = dia_certo(com,dia,d3)
         h1 = subject.horario1
         h2 = subject.horario2
         h3 = subject.horario3
         qnz = subject.quinzenal
-        if d1 != nil
-            aula = subject.aulas.new(data_aul: dia_comeca , horario_aul: h1, compareceu: 'Ainda não teve')
-            aula.save
-        end 
-        if d2 != nil
-            aula2 = subject.aulas.new(data_aul: dia_comeca2 , horario_aul: h2, compareceu: 'Ainda não teve')
-            aula2.save
-        end 
-        if d3 != nil
-            aula3 = subject.aulas.new(data_aul: dia_comeca3 , horario_aul: h1, compareceu: 'Ainda não teve')
-            aula3.save
+        qnz2 = subject.quinzenal2
+        qnz3 = subject.quinzenal3
+        dfinal = fim.strftime('%d')
+        mfinal = fim.strftime('%m')
+        anofinal = fim.strftime('%Y')
+        dia1 = dia_comeca1
+        dia2 = dia_comeca2
+        dia3 = dia_comeca3
+        while (dia1.strftime('%m') <= mfinal || dia2.strftime('%m') <= mfinal ||  dia3.strftime('%m') <= mfinal) && (dia1.strftime('%Y') == anofinal)
+            if dia1 != nil && dia1.strftime('%m') < mfinal && dia1.strftime('%Y') == anofinal
+                aula = subject.aulas.new(data_aul: dia1 , horario_aul: h1, compareceu: 'Ainda não teve')
+                aula.save
+            elsif  dia1 != nil && dia1.strftime('%m') == mfinal  && dia1.strftime('%d') <= dfinal  && dia1.strftime('%Y') == anofinal
+                aula = subject.aulas.new(data_aul: dia1 , horario_aul: h1, compareceu: 'Ainda não teve')
+                aula.save
+            end 
+
+            if dia2 != nil && dia2.strftime('%m') < mfinal && dia2.strftime('%Y') == anofinal
+                aula = subject.aulas.new(data_aul: dia2 , horario_aul: h2, compareceu: 'Ainda não teve')
+                aula.save
+            elsif  dia2 != nil && dia2.strftime('%m') == mfinal  && dia2.strftime('%d') <= dfinal && dia2.strftime('%Y') == anofinal
+                aula = subject.aulas.new(data_aul: dia2 , horario_aul: h2, compareceu: 'Ainda não teve')
+                aula.save
+            end
+
+            if dia3 != nil && dia3.strftime('%m') < mfinal && dia3.strftime('%Y') == anofinal
+                aula = subject.aulas.new(data_aul: dia3 , horario_aul: h3, compareceu: 'Ainda não teve')
+                aula.save
+            elsif  dia3 != nil && dia3.strftime('%m') == mfinal  && dia3.strftime('%d') <= dfinal && dia3.strftime('%Y') == anofinal
+                aula = subject.aulas.new(data_aul: dia3 , horario_aul: h3, compareceu: 'Ainda não teve')
+                aula.save
+            end 
+            if dia1 != nil
+                if qnz == 'Sim'
+                    dia1 += 14
+                else 
+                    dia1 += 7
+                end
+            end
+            if dia2 != nil
+                if qnz2 == 'Sim'
+                    dia2 += 14
+                else 
+                    dia2 += 7
+                end 
+            end
+            if dia3 != nil
+                if qnz3 == 'Sim'
+                    dia2 += 14
+                else 
+                    dia2 += 7
+                end 
+            end
         end 
     end 
     def func_dias_semanas(subject)
