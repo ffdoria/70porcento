@@ -7,21 +7,23 @@
     <ul class="list-group list-group-horizontal-sm rounded-circle ">
       <% subj=pegarSubjects(current_user) %>
       <% subj.each do |x| %>
-        <% if x[1]>70 %>
-          <li class=" list-group-item list-group-item-success" >
-          <h5><%= x[0]%> </h5>
-          <br>
-          <%= x[1].round().to_s%></li>
-        <% elsif x[1]>50 %>
-          <li class=" list-group-item list-group-item-warning" >
-          <h5><%= x[0]%> </h5>
-          <br>
-          <%= x[1].round().to_s%></li>
-        <%else%>
-        <li class=" list-group-item list-group-item-danger" >
-          <h5><%= x[0]%> </h5>
-          <br>
-          <%= x[1].round().to_s%></li>
+        <% if x[1] != "Sem dados por enquanto" %>
+          <% if x[1] > 70 %>
+            <li class=" list-group-item list-group-item-success" >
+            <h5><%= x[0]%> </h5>
+            <br>
+            <%= x[1].round().to_s%></li>
+          <% elsif x[1]>50 %>
+            <li class=" list-group-item list-group-item-warning" >
+            <h5><%= x[0]%> </h5>
+            <br>
+            <%= x[1].round().to_s%></li>
+          <%else%>
+          <li class=" list-group-item list-group-item-danger" >
+            <h5><%= x[0]%> </h5>
+            <br>
+            <%= x[1].round().to_s%></li>
+          <% end %>
         <% end %>
       <% end %>
     </ul>

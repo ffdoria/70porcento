@@ -9,7 +9,6 @@
       <th>Horario at</th>
       <th>Tipo</th>
       <th>Comentarios</th>
-      <th>Subject</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,13 +17,12 @@
     <% @atividades.each do |atividade| %>
       <tr>
         <td><%= atividade.data_at.strftime("%m/%d/%Y") %></td>
-        <td><%= atividade.horario_at.strftime("%I:%M") %></td>
+        <td><%= atividade.horario_at.strftime("%H:%M") %></td>
         <td><%= atividade.tipo %></td>
         <td><%= atividade.comentarios %></td>
-        <td><%= atividade.subject_id %></td>
-        <td><%= link_to 'Show', subject_atividade_path(@subject,atividade) %></td>
-        <td><%= link_to 'Edit', edit_subject_atividade_path(@subject,atividade)%></td>
-        <td><%= link_to 'Destroy', subject_atividade_path(@subject,atividade), method: :delete, data: { confirm: 'Are you sure?' }%></td>
+        <td><%= link_to 'Detalhes', subject_atividade_path(@subject,atividade) %></td>
+        <td><%= link_to 'Editar', edit_subject_atividade_path(@subject,atividade)%></td>
+        <td><%= link_to 'Deletar', subject_atividade_path(@subject,atividade), method: :delete, data: { confirm: 'Are you sure?' }%></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,5 +32,5 @@
 <% end %>
 <br>
 
-<%= link_to 'New Atividade', new_subject_atividade_path(@subject), class:"btn btn-info" %>
-<%= link_to 'Back', grade_subjects_path(@subject), class: "btn btn-dark" %>
+<%= link_to 'Criar atividade', new_subject_atividade_path(@subject), class:"btn btn-info" %>
+<%= link_to 'Voltar', grade_subjects_path(@subject), class: "btn btn-dark" %>

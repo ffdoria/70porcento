@@ -208,4 +208,21 @@ module HomeHelper
         end
         return subj
     end
+    def func_horario_semanas(subject)
+        d1 = subject.dia_semana1 
+        d2 = subject.dia_semana2
+        d3 = subject.dia_semana3 
+        h1 = subject.horario1 
+        h2 = subject.horario2
+        h3 = subject.horario3 
+        a1 = ""
+        a2 = ""
+        if subject.dia_semana2 == '' && subject.dia_semana3 == ''
+            return h1.strftime("%H:%M")
+        elsif subject.dia_semana3 == ''
+            return h1.strftime("%H:%M") + ', ' + h2.strftime("%H:%M")
+        else 
+            return h1.strftime("%H:%M") + ', ' + h2.strftime("%H:%M") + ', ' + h3.strftime("%H:%M")
+        end 
+    end
 end
