@@ -195,10 +195,6 @@ module HomeHelper
         end
         return aulas  
     end
-    def printaId(idAulas)
-        return idAulas
-    end
-
     def pegarSubjects(user)
         subj=[]
         user.grades.each do |x|

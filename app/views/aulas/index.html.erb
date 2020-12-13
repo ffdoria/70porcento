@@ -18,7 +18,7 @@
         <td><%= aula.data_aul.strftime("%d/%m/%Y") %></td>
         <td><%= aula.horario_aul.strftime("%I:%M") %></td>
         <td><%= aula.compareceu %></td>
-        <td><%= link_to 'Show', subject_aula_path(@subject,aula)% ></td>
+        <td><%= link_to 'Show', subject_aula_path(@subject,aula)%></td>
         <td><%= link_to 'Edit', edit_subject_aula_path(@subject,aula)%></td>
         <td><%= link_to 'Destroy', subject_aula_path(@subject,aula), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
