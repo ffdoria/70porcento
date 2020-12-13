@@ -13,7 +13,7 @@ module HomeHelper
         if soma == 0
             return "Sem dados por enquanto"
         else 
-            return foi.to_f/soma*100
+            return (foi.to_f/soma*100).round(2)
         end
     end
     def dia_da_semana(dia)

@@ -1,3 +1,10 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+div.page_content {
+    background-color: #ffffff;
+    margin: 30px;
+    border: solid 3px ;
+    border-radius: 5px;
+    border-color: darkblue;
+}
