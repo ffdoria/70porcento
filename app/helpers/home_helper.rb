@@ -13,7 +13,7 @@ module HomeHelper
         if soma == 0
             return "Sem dados por enquanto"
         else 
-            return (foi.to_f/soma*100).round(2)
+            return (foi.to_f/soma*100).round(1)
         end
     end
 
@@ -59,43 +59,13 @@ module HomeHelper
     end
     def dia_certo (com,dia,d)
         if d != nil
-            if (d -dia) >= 0 
+            if (d - dia) >= 0 
                 return com + (d-dia)
             else 
                 return com + (7 +d-dia)
             end
         else
             return nil
-        end
-    end
-    def sequencia (d1,d2,d3,h1,h2,h3,dc1,dc2,dc3)
-        if d2 == nil && d3 == nil
-            return [[d1,h1,dc1]]
-        elsif d3 == nil
-            if (d1 - d2).to_i > 0
-                return [[d2,h2,dc2],[d1,h1,dc1]]
-            else 
-                return [[d1,h1,dc1],[d2,h2,dc2]]
-            end
-        else 
-            d12 = (d1 - d2).to_i
-            d13 = (d1 - d3).to_i
-            d23 = (d2 - d3).to_i
-            if d12 < 0 && d13 < 0 && d23 < 0
-                return [[d1,h1,dc1],[d2,h2,dc2],[d3,h3,dc3]]
-            elsif d12 < 0 && d13 < 0 && d23 > 0
-                return [[d1,h1,dc1],[d3,h3,dc3],[d2,h2,dc2]]
-            elsif d12 > 0 && d13 < 0 && d23 < 0
-                return [[d2,h2,dc2],[d1,h1,dc1][d3,h3,dc3]]
-            elsif d12 > 0 && d13 > 0 && d23 < 0
-                return [[d2,h2,dc2],[d3,h3,dc3],[d1,h1,dc1]]
-            elsif d12 < 0 && d13 > 0 && d23 > 0
-                return [[d3,h3,dc3],[d1,h1,dc1],[d2,h2,dc2]]
-            elsif d12 > 0 && d13 > 0 && d23 > 0
-                return [[d3,h3,dc3],[d2,h2,dc2],[d1,h1,dc1]]
-            else 
-                return "Erro"
-            end 
         end
     end
     def gerar_aulas(grade,subject)
@@ -188,7 +158,7 @@ module HomeHelper
             x.subjects.each do |y|
                 y.atividades.each do |z|
                     if z.data_at == date
-                       atv.push(z.tipo)
+                       atv.push([y.codigo,z.tipo])
                     end
                 end
             end
@@ -219,7 +189,7 @@ module HomeHelper
         subj=[]
         user.grades.each do |x|
             x.subjects.each do |y|
-                subj.push([y.nome,calc_presenca(y)])
+                subj.push([y.nome,calc_presenca(y),calc_dias_presenca(y)])
             end
         end
         return subj

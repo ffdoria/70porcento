@@ -10,19 +10,22 @@
         <% if x[1] != "Sem dados por enquanto" %>
           <% if x[1] > 70 %>
             <li class=" list-group-item list-group-item-success" >
-            <h5><%= x[0]%> </h5>
+            <h5><%= x[0] %> </h5>
+            <%= x[1].round(1).to_s  + "%" %>
             <br>
-            <%= x[1].round(1).to_s%></li>
+            <%= "Precisa: " + x[2].to_s + " aulas" %></li>
           <% elsif x[1]>50 %>
             <li class=" list-group-item list-group-item-warning" >
             <h5><%= x[0]%> </h5>
+            <%= x[1].round(1).to_s  + "%" %>
             <br>
-            <%= x[1].round(1).to_s%></li>
+            <%= "Precisa: " + x[2].to_s + " aulas" %></li>
           <%else%>
           <li class=" list-group-item list-group-item-danger" >
             <h5><%= x[0]%> </h5>
+            <%= x[1].round(1).to_s  + "%" %>
             <br>
-            <%= x[1].round(1).to_s%></li>
+            <%= "Precisa: " + x[2].to_s + " aulas" %></li>
           <% end %>
         <% end %>
       <% end %>
@@ -34,7 +37,7 @@
         <br>
         <% atvs= Atv_calend(current_user, date) %>
         <% atvs.each do |x| %>
-            <%= x %> 
+            <%= x[1] + " de " + x[0] %> 
           <br>
         <% end %>
     <% end %>
@@ -45,7 +48,7 @@
     <ul class="list-group">
       <% aulas_array=aulasDevendo(current_user) %>
       <% aulas_array.each do |x| %>
-          <li class="list-group-item itemLista"><%= x[0] + " " + x[1] + " " + x[2] + ", Aula: "+ x[3].strftime("%d/%m" )+ " id: " + x[4].to_s %>
+          <li class="list-group-item itemLista"><%= x[0] + " " + x[1] + " " + x[2] + ", Aula: "+ x[3].strftime("%d/%m" ) %>
           </li> 
       <% end %>
     </ul>
