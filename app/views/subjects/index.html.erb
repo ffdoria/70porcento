@@ -9,6 +9,7 @@
       <th>Codigo</th>
       <th>Creditos</th>
       <th>Presenca</th>
+      <th>Aulas para dar 70% </th>
       <th>Dia semanas</th>
       <th>Horarios</th>
       <th>Link para Aulas</th>
@@ -24,11 +25,8 @@
         <td><%= subject.nome %></td>
         <td><%= subject.codigo %></td>
         <td><%= subject.creditos %></td>
-<<<<<<< HEAD
-        <td><%= calc_presenca(subject) %></td>
-=======
         <td><%= calc_presenca(subject)  %></td>
->>>>>>> 8fda0b6e0455715ed17aa56be08f25177ec9af01
+        <td><%= calc_dias_presenca(subject)  %></td>
         <td><%= func_dias_semanas(subject) %> </td>
         <td><%= func_horario_semanas(subject) %> </td>
         <td><%= link_to "Aulas", subject_aulas_path(subject) %> </td>

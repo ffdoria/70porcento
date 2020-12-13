@@ -16,6 +16,24 @@ module HomeHelper
             return (foi.to_f/soma*100).round(2)
         end
     end
+
+    def calc_dias_presenca(subject)
+        soma = 0
+        foi = 0
+        subject.aulas.each do |x|
+            if x.compareceu == "Sim"
+                foi += 1 
+            end
+            soma += 1
+        end  
+        nec = (soma * 0.7).ceil - foi 
+        if nec < 0
+            return 0
+        else 
+            return nec 
+        end 
+    end
+    
     def dia_da_semana(dia)
         if dia == 'Mon' || dia == "Segunda"
             return 2

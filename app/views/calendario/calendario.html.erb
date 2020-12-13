@@ -17,12 +17,12 @@
             <li class=" list-group-item list-group-item-warning" >
             <h5><%= x[0]%> </h5>
             <br>
-            <%= x[1].round().to_s%></li>
+            <%= x[1].round(1).to_s%></li>
           <%else%>
           <li class=" list-group-item list-group-item-danger" >
             <h5><%= x[0]%> </h5>
             <br>
-            <%= x[1].round().to_s%></li>
+            <%= x[1].round(1).to_s%></li>
           <% end %>
         <% end %>
       <% end %>
@@ -41,7 +41,7 @@
   </div>
   
   <div class="container listaAula">
-  <h5> Sem informção de presença </h5>
+  <h5> Sem informação de presença </h5>
     <ul class="list-group">
       <% aulas_array=aulasDevendo(current_user) %>
       <% aulas_array.each do |x| %>
