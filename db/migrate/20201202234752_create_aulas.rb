@@ -6,6 +6,7 @@ class CreateAulas < ActiveRecord::Migration[6.0]
       t.belongs_to :subject, null: false, foreign_key: true
       t.timestamps
       t.string :compareceu
+      t.integer :grade_id
     end
   end
 end

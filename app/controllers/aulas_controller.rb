@@ -1,6 +1,7 @@
 class AulasController < ApplicationController
   before_action :set_aula, only: [:show, :edit, :update, :destroy]
   before_action :get_subject
+
   # GET /aulas
   # GET /aulas.json
   def index
@@ -65,6 +66,7 @@ class AulasController < ApplicationController
     def get_subject
       @subject = Subject.find(params[:subject_id])
     end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_aula
       @subject = Subject.find(params[:subject_id])

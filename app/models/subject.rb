@@ -1,7 +1,7 @@
 class Subject < ApplicationRecord
   belongs_to :grade
-  has_many :atividades
-  has_many :aulas
+  has_many :atividades, :dependent => :destroy
+  has_many :aulas, :dependent => :destroy
   enum dia_semana: {
     "Segunda" => "Segunda",
     "Terça" => "Terça",
@@ -14,4 +14,5 @@ class Subject < ApplicationRecord
     "Sim" => "Sim",
     "Não" => "Não"
   }
+  
 end

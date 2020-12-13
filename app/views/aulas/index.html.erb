@@ -16,11 +16,12 @@
     <% @aulas.each do |aula| %>
       <tr>
         <td><%= aula.data_aul.strftime("%d/%m/%Y") %></td>
-        <td><%= aula.horario_aul.strftime("%I:%M") %></td>
+        <td><%= aula.horario_aul.strftime("%H:%M") %></td>
         <td><%= aula.compareceu %></td>
-        <td><%= link_to 'Show', subject_aula_path(@subject,aula)%></td>
-        <td><%= link_to 'Edit', edit_subject_aula_path(@subject,aula)%></td>
-        <td><%= link_to 'Destroy', subject_aula_path(@subject,aula), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to 'Detalhes', subject_aula_path(@subject,aula) %></td>
+        <td><%= link_to 'Editar', edit_subject_aula_path(@subject,aula)%></td>
+        <td><%= link_to 'Deletar', subject_aula_path(@subject,aula), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,6 +32,5 @@
 <br>
 <br>
 
-
-<%= link_to 'New Aula', new_subject_aula_path(@subject) %>
-<%= link_to 'Back', grade_subjects_path(@subject)  %>
+<%= link_to 'Criar Aula', new_subject_aula_path(@subject),  class:"btn btn-info"%>
+<%= link_to 'Voltar', grade_subjects_path(@subject.grade),class: "btn btn-dark"   %>
