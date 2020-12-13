@@ -24,7 +24,7 @@
         <td><%= subject.nome %></td>
         <td><%= subject.codigo %></td>
         <td><%= subject.creditos %></td>
-        <td><%= calc_presenca(subject).round(3) %></td>
+        <td><%= calc_presenca(subject) %></td>
         <td><%= func_dias_semanas(subject) %> </td>
         <td><%= func_horario_semanas(subject) %> </td>
         <td><%= link_to "Aulas", subject_aulas_path(subject) %> </td>

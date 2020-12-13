@@ -187,8 +187,10 @@ module HomeHelper
             x.subjects.each do |y|
                 y.aulas.each do |z|
                     hj.downto(come) { |dia| puts dia }
-                        if z.compareceu == 'Ainda não teve'
-                            aulas.push([x.nome ,y.nome , y.codigo ,z.data_aul, z.id])
+                        if hj>=z.data_aul
+                            if z.compareceu == 'Ainda não teve'
+                                aulas.push([x.nome ,y.nome , y.codigo ,z.data_aul, z.id])
+                            end
                         end
                 end
             end
