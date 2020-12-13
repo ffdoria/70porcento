@@ -2,7 +2,7 @@
 
 <h1>Atividades</h1>
 <% if !@subject.atividades.empty? %>
-<table>
+<table class="table table-primary table-striped">
   <thead>
     <tr>
       <th>Data at</th>
@@ -23,8 +23,8 @@
         <td><%= atividade.comentarios %></td>
         <td><%= atividade.subject_id %></td>
         <td><%= link_to 'Show', subject_atividade_path(@subject,atividade) %></td>
-        <td><%= link_to 'Edit', edit_subject_atividade_path(@subject,atividade) %></td>
-        <td><%= link_to 'Destroy', subject_atividade_path(@subject,atividade), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_subject_atividade_path(@subject,atividade)%></td>
+        <td><%= link_to 'Destroy', subject_atividade_path(@subject,atividade), method: :delete, data: { confirm: 'Are you sure?' }%></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,5 +34,5 @@
 <% end %>
 <br>
 
-<%= link_to 'New Atividade', new_subject_atividade_path(@subject) %>
-<%= link_to 'Back', grade_subjects_path(@subject)  %>
+<%= link_to 'New Atividade', new_subject_atividade_path(@subject), class:"btn btn-info" %>
+<%= link_to 'Back', grade_subjects_path(@subject), class: "btn btn-dark" %>

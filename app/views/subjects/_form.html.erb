@@ -11,63 +11,63 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :nome %>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :codigo %>
-    <%= form.text_field :codigo %>
+    <%= form.text_field :codigo, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :creditos %>
-    <%= form.text_field :creditos %>
+    <%= form.text_field :creditos, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :dia_semana1 %>
-    <%= form.select :dia_semana1, Subject.dia_semanas.keys, prompt: 'Escolha' %>
+    <%= form.select :dia_semana1, Subject.dia_semanas.keys, prompt: 'Escolha', class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :horario1 %>
-    <%= form.time_select :horario1 %>
+    <%= form.time_select :horario1, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :quinzenal %>
-    <%= form.select :quinzenal, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" %>
+    <%= form.select :quinzenal, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não", class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :dia_semana2 %>
-    <%= form.select :dia_semana2, Subject.dia_semanas.keys, prompt: 'Escolha' %>
+    <%= form.select :dia_semana2, Subject.dia_semanas.keys, prompt: 'Escolha', class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :horario2 %>
-    <%= form.time_select :horario2 %>
+    <%= form.time_select :horario2, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :quinzenal2 %>
-    <%= form.select :quinzenal2, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" %>
+    <%= form.select :quinzenal2, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" , class:"form-control"%>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :dia_semana3 %>
-    <%= form.select :dia_semana3, Subject.dia_semanas.keys, prompt: 'Escolha' %>
+    <%= form.select :dia_semana3, Subject.dia_semanas.keys, prompt: 'Escolha', class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :horario3 %>
-    <%= form.time_select :horario3 %>
+    <%= form.time_select :horario3, class:"form-control" %>
   </div>
 
   
   
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :quinzenal3 %>
-    <%= form.select :quinzenal3, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" %>
+    <%= form.select :quinzenal3, Subject.quinzenals.keys, prompt: 'Escolha',  :selected => "Não" , class:"form-control"%>
   </div>
   
   

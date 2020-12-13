@@ -177,7 +177,7 @@ module HomeHelper
         end  
         return atv
     end
-
+    
     def aulasDevendo(user)
         require "date"
         hj = Date.today
@@ -188,19 +188,22 @@ module HomeHelper
                 y.aulas.each do |z|
                     hj.downto(come) { |dia| puts dia }
                         if z.compareceu == 'Ainda não teve'
-                            aulas.push(x.nome + "--" + y.nome + ", Aula: "+ z.data_aul.strftime("%d/%m"))
+                            aulas.push([x.nome ,y.nome , y.codigo ,z.data_aul, z.id])
                         end
                 end
             end
         end
         return aulas  
     end
+    def printaId(idAulas)
+        return idAulas
+    end
 
     def pegarSubjects(user)
         subj=[]
         user.grades.each do |x|
             x.subjects.each do |y|
-                subj.push(y.nome+"--"+calc_presenca(y).to_s)
+                subj.push([y.nome,calc_presenca(y)])
             end
         end
         return subj

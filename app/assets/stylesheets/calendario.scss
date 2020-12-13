@@ -5,7 +5,7 @@
     font-family: cursive;
     .day {  background-color: violet;
             border-radius: 5px;
-
+            font-size: 15px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             color: whitesmoke;
             margin: 10px;}
@@ -32,4 +32,7 @@
   div.subjectPresenca{
             padding: 10px;
             margin: 10px;
+  }
+  li.itemLista{
+      font-size: 14px;
   }

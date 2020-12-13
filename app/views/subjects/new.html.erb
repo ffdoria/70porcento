@@ -1,4 +1,8 @@
 <h1>New Subject</h1>
-
-<%= render 'form', subject:  [@grade,@subject] %>
-<%= link_to 'Back', grade_subjects_path(@grade) %>
+<head>
+<link rel="stylesheet" href="app\assets\stylesheets\subjects.scss">
+</head>
+<div class"formul">
+    <%= render 'form', subject:  [@grade,@subject] %>
+    <%= link_to 'Back', grade_subjects_path(@grade) %>
+</div>

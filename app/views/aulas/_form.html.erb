@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :data_aul %>
-    <%= form.date_select :data_aul %>
+    <%= form.date_select :data_aul , class:"form-control"%>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :horario_aul %>
-    <%= form.time_select :horario_aul %>
+    <%= form.time_select :horario_aul, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :compareceu %>
-    <%= form.select :compareceu, Aula.compareceus.keys, prompt: 'Escolha',  :selected => "Ainda não teve" %>
+    <%= form.select :compareceu, Aula.compareceus.keys, prompt: 'Escolha',  :selected => "Ainda não teve" , class:"form-control"%>
   </div>
 
   <div class="actions">

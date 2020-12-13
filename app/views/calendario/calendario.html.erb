@@ -4,12 +4,27 @@
 
 <body>
   <div class="subjectPresenca">
-  <ul class="list-group">
-    <% subj=pegarSubjects(current_user) %>
-    <% subj.each do |x| %>
-        <li class="list-group-item itemLista"><%= x %></li> 
-    <% end %>
-</ul>
+    <ul class="list-group list-group-horizontal-sm rounded-circle ">
+      <% subj=pegarSubjects(current_user) %>
+      <% subj.each do |x| %>
+        <% if x[1]>70 %>
+          <li class=" list-group-item list-group-item-success" >
+          <h5><%= x[0]%> </h5>
+          <br>
+          <%= x[1].round().to_s%></li>
+        <% elsif x[1]>50 %>
+          <li class=" list-group-item list-group-item-warning" >
+          <h5><%= x[0]%> </h5>
+          <br>
+          <%= x[1].round().to_s%></li>
+        <%else%>
+        <li class=" list-group-item list-group-item-danger" >
+          <h5><%= x[0]%> </h5>
+          <br>
+          <%= x[1].round().to_s%></li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
   <div class="border border-secondary rounded container">
     <%= month_calendar do |date| %>
@@ -24,10 +39,12 @@
   </div>
   
   <div class="container listaAula">
+  <h5> Sem informção de presença </h5>
     <ul class="list-group">
       <% aulas_array=aulasDevendo(current_user) %>
       <% aulas_array.each do |x| %>
-          <li class="list-group-item itemLista"><%= x %></li> 
+          <li class="list-group-item itemLista"><%= x[0] + " " + x[1] + " " + x[2] + ", Aula: "+ x[3].strftime("%d/%m" )+ " id: " + x[4].to_s %>
+          </li> 
       <% end %>
     </ul>
   </div>

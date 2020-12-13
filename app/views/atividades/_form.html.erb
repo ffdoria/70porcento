@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :data_at %>
-    <%= form.date_select :data_at %>
+    <%= form.date_select :data_at, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :horario_at %>
-    <%= form.time_select :horario_at %>
+    <%= form.time_select :horario_at, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :tipo %>
-    <%= form.text_field :tipo %>
+    <%= form.text_field :tipo, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :comentarios %>
-    <%= form.text_area :comentarios %>
+    <%= form.text_area :comentarios, class:"form-control" %>
   </div>
   <div class="actions">
     <%= form.submit %>

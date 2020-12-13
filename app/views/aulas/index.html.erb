@@ -2,9 +2,9 @@
 
 <h1>Aulas</h1>
 <% if !@subject.aulas.empty? %>
-<table>
+<table class="table table-primary table-striped">
   <thead>
-    <tr>
+    <tr >
       <th>Data aula</th>
       <th>Horario </th>
       <th>Compareceu?</th>
@@ -18,8 +18,8 @@
         <td><%= aula.data_aul.strftime("%d/%m/%Y") %></td>
         <td><%= aula.horario_aul.strftime("%I:%M") %></td>
         <td><%= aula.compareceu %></td>
-        <td><%= link_to 'Show', subject_aula_path(@subject,aula)%></td>
-        <td><%= link_to 'Edit', edit_subject_aula_path(@subject,aula) %></td>
+        <td><%= link_to 'Show', subject_aula_path(@subject,aula)% ></td>
+        <td><%= link_to 'Edit', edit_subject_aula_path(@subject,aula)%></td>
         <td><%= link_to 'Destroy', subject_aula_path(@subject,aula), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
