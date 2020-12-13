@@ -40,5 +40,5 @@
 <p>Você não possui materias criadas!</p>
 <% end %>
 <br>
-<%= link_to 'Criar materia', new_grade_subject_path(@grade) %> |
-<%= link_to 'Voltar', user_grades_path(current_user)  %>
+<%= link_to 'Criar materia', new_grade_subject_path(@grade) ,class:"btn btn-info"%> 
+<%= link_to 'Voltar', user_grades_path(current_user)  , class: "btn btn-dark" %>

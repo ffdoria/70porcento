@@ -1,4 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    <img src="app\assets\images\logos\logo.jpg" width="30" height="30" alt="" >
+  </a>
   <%= link_to "Home", root_path, class:"navbar-brand" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -7,12 +10,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <% if current_user %>
-          <%= link_to "Grades", user_grades_path(current_user) %> 
-          <% end %>
+          <%= link_to "Grades", user_grades_path(current_user), class:"nav-link w3-hover-white" %> 
+          <a href="/calendario" onclick="w3_close()" class="nav-link w3-hover-white" >Calendário</a> 
+        <% end %>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        
       </ul>
     </div>
-    <div> <% if current_user %> 
-            Logado como: <%= current_user.email %> 
+
+    <div class="collapse navbar-collapse " > <% if current_user %> 
+            Logado como: <%= current_user.email %> |  
             <%= link_to "Log out", destroy_user_session_path, method: :delete %> 
           <% else %>
             <%= link_to "Sign Up", new_registration_path(resource) %>

@@ -8,7 +8,6 @@ class CreateSubjects < ActiveRecord::Migration[6.0]
       t.string :dia_semana1
       t.time :horario1
       t.belongs_to :grade, null: false, foreign_key: true
-
       t.timestamps
     end
   end

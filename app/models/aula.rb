@@ -1,5 +1,5 @@
 class Aula < ApplicationRecord
-  belongs_to :subject
+  belongs_to :subject 
   enum compareceu: {
     "Sim" => "Sim",
     "Não" => "Não",

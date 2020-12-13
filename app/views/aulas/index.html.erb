@@ -31,6 +31,5 @@
 <br>
 <br>
 
-
-<%= link_to 'Criar Aula', new_subject_aula_path(@subject) %>
-<%= link_to 'Voltar', grade_subjects_path(@subject)  %>
+<%= link_to 'Criar Aula', new_subject_aula_path(@subject),  class:"btn btn-info"%>
+<%= link_to 'Voltar', grade_subjects_path(@subject.grade),class: "btn btn-dark"   %>
