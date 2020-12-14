@@ -16,7 +16,27 @@
     <% @aulas=@aulas.order('aulas.data_aul ASC') %>
     <% @aulas.each do |aula| %>
       <% hj = dia_Hj() %>
-      <% if aula.data_aul <= hj %>
+      <% if aula.compareceu == "Sim" %>
+        <tr class="bg-success">
+          <td><%= aula.data_aul.strftime("%d/%m/%Y") %></td>
+          <td><%= aula.horario_aul.strftime("%H:%M") %></td>
+          <td><%= aula.compareceu %></td>
+
+          <td><%= link_to 'Detalhes', subject_aula_path(@subject,aula) %></td>
+          <td><%= link_to 'Editar', edit_subject_aula_path(@subject,aula)%></td>
+          <td><%= link_to 'Deletar', subject_aula_path(@subject,aula), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% elsif aula.compareceu == 'Não' %>
+        <tr class="bg-danger">
+          <td><%= aula.data_aul.strftime("%d/%m/%Y") %></td>
+          <td><%= aula.horario_aul.strftime("%H:%M") %></td>
+          <td><%= aula.compareceu %></td>
+
+          <td><%= link_to 'Detalhes', subject_aula_path(@subject,aula) %></td>
+          <td><%= link_to 'Editar', edit_subject_aula_path(@subject,aula)%></td>
+          <td><%= link_to 'Deletar', subject_aula_path(@subject,aula), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% elsif aula.data_aul <= hj %>
         <tr class="table-dark">
           <td><%= aula.data_aul.strftime("%d/%m/%Y") %></td>
           <td><%= aula.horario_aul.strftime("%H:%M") %></td>
